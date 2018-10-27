@@ -1,3 +1,5 @@
 # Transformice Server
 
-A Transformice source written in Python 3 that uses asyncore
+Transformice Source/Emulator for Python 3 using Asyncore as Socket.
+
+![Transformice Emulator](https://i.imgur.com/DroFWLx.png "Transformice Emulator")
