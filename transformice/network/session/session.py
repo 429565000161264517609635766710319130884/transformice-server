@@ -11,6 +11,7 @@ class Session(asyncore.dispatcher):
         self.connected = True
         self.client = None
         self.expected_pid = 0
+        self.current_language = 0
 
     def disconnect(self):
         if not self.connected:
@@ -65,7 +66,6 @@ class Session(asyncore.dispatcher):
     def send(self, data):
         data = Encoder.encode(data)
         print("SENT: " + str(data))
-        print(self.socket)
         self.socket.send(data)
 
     def handle_close(self):

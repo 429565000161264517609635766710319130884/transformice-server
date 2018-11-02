@@ -31,5 +31,8 @@ class Encoder:
             buffer.writeByte(out_tokens[0])
             buffer.writeByte(out_tokens[1])
 
-            buffer.writeBytes(out_buffer.toByteArray())
+            out_data = out_buffer.toByteArray()
+            data.buffer.clear()
+
+            buffer.writeBytes(out_data)
             return buffer.toByteArray()

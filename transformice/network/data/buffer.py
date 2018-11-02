@@ -20,6 +20,9 @@ class Buffer:
     def readable(self):
         return len(self.bytes) > 0
 
+    def clear(self):
+        self.bytes = b''
+
     def write(self, data):
         self.bytes += data.encode()
 
