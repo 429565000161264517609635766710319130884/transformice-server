@@ -1,4 +1,4 @@
-from transformice.packet.outgoing import Outgoing
+from transformice.packet.outgoing.__init__ import Outgoing
 from transformice.network.data import Buffer
 class Encoder:
     @staticmethod
@@ -9,7 +9,7 @@ class Encoder:
         elif type(data) == bytes:
             return data
 
-        if isinstance(data, Outgoing):
+        else:
             out_tokens = data.tokens
             out_buffer = data.buffer
 

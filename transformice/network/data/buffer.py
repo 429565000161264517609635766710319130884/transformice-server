@@ -39,7 +39,7 @@ class Buffer:
         self.bytes += pack('!H', int(data))
 
     def writeInt24(self, data):
-        self.bytes += pack('!B', int(data) >> 18 % 255)
+        self.bytes += pack('!B', int(data) >> 16 % 255)
         self.bytes += pack('!B', int(data) >> 8 % 255)
         self.bytes += pack('!B', int(data) % 255)
 
@@ -77,7 +77,7 @@ class Buffer:
         return int(data)
 
     def readInt24(self):
-        data = unpack('!B', self.bytes[:1])[0] << 18
+        data = unpack('!B', self.bytes[:1])[0] << 16
         data |= unpack('!B', self.bytes[:1])[0] << 8
         data |= unpack('!B', self.bytes[:1])[0]
         self.bytes = self.bytes[3:]
