@@ -1,0 +1,10 @@
+    def enter(self, client: object):
+        if client not in self.__clients:
+            self.__clients.append(client)
+            Logging.info(f"[{self.__name}] adding player: {client.data().get('Username')}")
+            if self.__address is not None:
+                #client.send(OPRoomGame(4 if self.__name.startswith("madchees") else 0))
+                #client.send(OPRoomType(8 if self.__name.startswith("survivor") else 11 if self.__name.startswith("music") else 1 if self.__name.startswith("madchees") else 4))
+                #client.send(OPEnterRoom(self.__name))
+                #client.send(OPOldProtocol([5, 7], self.__anchors))
+                client.send(OPBulle(BulleManager.generateCode(client), self.__address))
